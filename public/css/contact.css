@@ -1,0 +1,14 @@
+
+/* Home page */
+.welcomeBlock{
+    background-image: url('volodymyr-hryshchenko-V5vqWC9gyEU-unsplash.jpg');
+    height:400px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* home note */
+.welnote{
+    padding-top: 130px;
+}

@@ -1,0 +1,15 @@
+<% layout('layout/boilerplate') %>
+<link rel="stylesheet" href="/css/preloader.css">
+
+<div id="preloader">
+    <div id="loader"></div>
+  </div>
+
+  <script>
+    let spinnerWrapper = document.querySelector('#preloader');
+  
+    window.addEventListener('load', function () {
+         spinnerWrapper.style.display = 'none';
+        spinnerWrapper.parentElement.removeChild(spinnerWrapper);
+    });
+  </script>

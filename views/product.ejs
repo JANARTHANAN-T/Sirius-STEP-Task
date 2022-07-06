@@ -1,0 +1,187 @@
+<% layout('layout/boilerplate') %>
+<%- include('preloader') -%>
+<%- include('./partials/flash') %>
+<style>
+  /* Home page */
+.welcomeBlock{
+    background-image: url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+    height:400px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* home note */
+.welnote{
+    padding-top: 200px;
+}
+
+.h {
+    overflow: hidden;
+    
+}
+
+.h img {
+    width: 100%;
+    transition: 0.5s all ease-in-out;
+}
+
+.h:hover img {
+    transform: scale(1.4);
+}
+
+.floatSetting{
+    position:fixed;
+    width:45px;
+    height:45px;
+    bottom:12px;
+    right:20px;
+    background-image: linear-gradient(to bottom right,#004e92, #000428);
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    z-index: 2;
+    transition: all .1s linear;
+    opacity: 20%;
+  }
+
+
+  .flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .flip-card-back {
+    background-image: linear-gradient(to bottom right,#2193b0 , #6dd5ed);  
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  .floatAddform{
+    position:fixed;
+    width:45px;
+    height:45px;
+    bottom:150px;
+    right:20px;
+    background-image: linear-gradient(to bottom right,#009266, #082800);
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    z-index: 2;
+    transition: all .1s linear;
+  }
+</style>
+     
+     <!-- Welcome block -->
+     <div class="welcomeBlock ">
+        <h1 class="container text-center text-success pb-4 welnote animate__animated animate__zoomIn fs-1 fw-bolder ">O U R &nbsp; P R O D U C T S</h1>
+    </div>    
+
+    <!-- body -->
+    <div class="container mb-4">
+        <h2 class="container text-center pt-5 fs-1">PRODUCTS</h2>
+        <div class="container"><hr style="margin: 2% 25% 5%;"></div>
+
+  <div class="container mb-4">
+    <a href="/product" class="btn btn-outline-success x-4 me-5">ALL</a>
+    <% for(let p of products) { %>
+      <a href="/product/<%=p%>" class="btn btn-outline-success x-4 me-5"><%=p%></a>
+      
+    <% } %>
+  </div>
+  <% if (display) { %>
+  <div class="container">
+    <div class="row">
+    <% for(let p of product) { %>
+      <div class="col-md-6 col-lg-4 col-sm-12 d-flex justify-content-center p-4" >
+        <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="<%= p.image %>" alt="Avatar" style="width:300px;height:200px;">
+              </div>
+              <div class="flip-card-back">
+                <h2 class="p-1"><%= p.name %></h2>
+                <p>Rs.<%= p.prize %></p>
+                <% if (access1==1) { %>
+                  <form action="/product/<%= p._id %>?_method=DELETE" method="POST" >
+                    <button class="btn btn-danger" style="border-radius: 50%;"><i class="fas fa-trash"></i></button>
+                  </form>
+                <% } else { %>
+                <p class="p-1"><%= p.description %></p>
+                <% } %> 
+              </div>
+            </div>
+          </div>
+    </div>
+    <% } %>
+  </div>
+</div>
+<% } else{%>
+  <div class="container">
+    <div class="row">
+    <% for(let p of product) { %>
+      <div class="col-md-6 col-lg-4 col-sm-12 d-flex justify-content-center p-4" >
+        <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="<%= p.image %>" alt="Avatar" style="width:300px;height:200px;">
+              </div>
+              <div class="flip-card-back">
+                <h2 class="p-1"><%= p.name %></h2>
+                <p>Rs.<%= p.prize %></p>
+                <% if (access1==1) { %>
+                  <form action="/product/<%= p._id %>?_method=DELETE" method="POST" >
+                    <button class="btn btn-danger" style="border-radius: 50%;"><i class="fas fa-trash"></i></button>
+                  </form>
+                <% } else { %>
+                <p class="p-1"><%= p.description %></p>
+                <% } %> 
+              </div>
+            </div>
+          </div>
+    </div>
+    <% } %>
+  </div>
+</div>
+<% } %> 
+    </div>
+
+<% if (access1==1) { %>
+  <a href="/productForm" class="floatAddform fs-3 m-2">
+    <i class="fas fa-plus"></i>
+</a>
+<% } else { %>
+
+<a href="/security" class="floatSetting d-none fs-3 m-2">
+  <i class="far fa-cog"></i>
+</a>
+<% } %> 

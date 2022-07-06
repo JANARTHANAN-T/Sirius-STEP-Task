@@ -1,0 +1,35 @@
+
+/* Home page */
+.welcomeBlock{
+    background-image: url('aboutImage.jpg');
+    height:400px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* home note */
+.welnote{
+    padding-top: 200px;
+}
+
+
+/* card */
+.card{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    transition: .7s ease-in-out;
+}
+
+.h {
+    overflow: hidden;
+    
+}
+
+.h img {
+    width: 100%;
+    transition: 0.5s all ease-in-out;
+}
+
+.h:hover img {
+    transform: scale(1.4);
+}

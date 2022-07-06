@@ -1,0 +1,15 @@
+<% layout('layout/boilerplate') %>
+<%- include('../preloader') -%>
+<div class="container py-5 mb-4">
+  <h2 class="container text-center py-5 fs-2">ADD GALLERY PICTURE</h2>
+<form action="/galleryForm" method="post" class="needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label fs-4">Gallery Image*</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Gallery Image" name="gallery[image]" required>
+    </div>
+    <button class="btn btn-primary btn-lg grad px-5 py-2">Send</button>
+    </form>
+  </div>
+
+    
+<script src="/js/validation.js"></script>

@@ -1,0 +1,33 @@
+<% layout('layout/boilerplate') %>
+<%- include('../preloader') -%>
+
+
+<div class="container py-5 mb-4">
+  <h2 class="container text-center py-5 fs-2">ADD PRODUCTS</h2>
+<form action="/productForm" method="post" class="needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label fs-4">Product Image*</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Product Image" name="product[image]" >
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label fs-4">Product Name*</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Product Name" name="product[name]" required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label fs-4">Product Type*</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Product Type" name="product[type]" required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label fs-4">Product Prize*</label>
+        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Product Prize" name="product[prize]" required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label fs-4">Product Discription*</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Discription" name="product[description]" required>
+      </div>
+    <button class="btn btn-primary btn-lg grad px-5 py-2">Send</button>
+    </form>
+  </div>
+
+    
+<script src="/js/validation.js"></script>

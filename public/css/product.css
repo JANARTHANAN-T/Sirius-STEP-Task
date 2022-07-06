@@ -1,0 +1,97 @@
+/* Home page */
+.welcomeBlock{
+    background-image: url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+    height:400px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* home note */
+.welnote{
+    padding-top: 200px;
+}
+
+.h {
+    overflow: hidden;
+    
+}
+
+.h img {
+    width: 100%;
+    transition: 0.5s all ease-in-out;
+}
+
+.h:hover img {
+    transform: scale(1.4);
+}
+
+.floatSetting{
+    position:fixed;
+    width:45px;
+    height:45px;
+    bottom:12px;
+    right:20px;
+    background-image: linear-gradient(to bottom right,#004e92, #000428);
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    z-index: 2;
+    transition: all .1s linear;
+    opacity: 20%;
+  }
+
+
+  .flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .flip-card-back {
+    background-image: linear-gradient(to bottom right,#2193b0 , #6dd5ed);  
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  .floatAddform{
+    position:fixed;
+    width:45px;
+    height:45px;
+    bottom:150px;
+    right:20px;
+    background-image: linear-gradient(to bottom right,#009266, #082800);
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    z-index: 2;
+    transition: all .1s linear;
+  }

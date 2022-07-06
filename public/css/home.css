@@ -1,0 +1,73 @@
+/* Home page */
+.welcomeBlock{
+    background-image: url('https://images.pexels.com/photos/3330009/pexels-photo-3330009.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    height:600px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* home note */
+.welnote1{
+    padding-top: 55px;
+    font-size: 90px;
+    /* color:#04e936; */
+    background: -webkit-linear-gradient( #6dd5ed,rgb(179, 255, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: #20552c; */
+} 
+
+.welnote2{
+  background: -webkit-linear-gradient( #6dd5ed,rgb(179, 255, 0), #6dd5ed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} 
+
+
+
+/* card */
+.card{
+    background-image: linear-gradient(to bottom right,#2193b0 , #6dd5ed); 
+    color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    transition: .7s ease-in-out;
+    border-bottom-left-radius: 10%;
+    border-top-right-radius: 10%;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* text */
+  .typewriter {
+    font-family: sans-serif;
+    color: #fff;
+    padding-left: 30px;
+    display: block;
+  }
+  .typewriter-text {
+    padding-right: 10px;
+    color: rgb(255, 251, 0);
+    border-right: solid rgb(255, 217, 0) 7px;
+    text-transform: uppercase;
+    animation: cursor 1s ease-in-out infinite;
+    font-weight: bold;
+  }
+  @keyframes cursor {
+    from { border-color: rgb(255, 238, 0); }
+    to { border-color: transparent; }
+  }
+  
+  @media (max-width: 767.98px) {
+    .typewriter { font-size: 25px; }
+  }
+  @media (min-width: 768px) {
+    .typewriter { font-size: 30px; }
+  }
+
+
+ 
