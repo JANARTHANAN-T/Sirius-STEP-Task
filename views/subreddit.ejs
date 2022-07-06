@@ -1,0 +1,19 @@
+<%- include('partials/head') %>
+
+    <div class="container">
+        <%- include('partials/navbar') %>
+    <h1>Browsing the <%= name %> subreddit</h1>
+    <h2><%= description %></h2>
+    <p><%=subscribers%> Total subscribers</p>
+    <hr>
+    <% for(let post of posts) { %>
+        <div class="card" style="width: 18rem;">
+            <img src="<%= post.img %>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= post.title %> - <%= post.author %></h5>
+            </div>
+          </div>
+    <%}%>
+   
+    
+    <%- include('partials/footer') %>

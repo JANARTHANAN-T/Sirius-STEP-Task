@@ -1,0 +1,12 @@
+<%- include('partials/head') %>
+
+    <div class="container">
+    <%- include('partials/navbar') %>
+    <h1>MOVIES</h1>
+    <ul>
+        <% for(movie of movies) {%>
+            <li><%= movie %></li>
+        <%}%>
+    </ul>
+
+<%- include('partials/footer') %>
